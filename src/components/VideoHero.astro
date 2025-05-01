@@ -17,11 +17,24 @@ import Section from "./Section.astro";
     >
   </div>
 
-  <video
+  <!-- <video
     slot="background"
     class="h-full w-full object-cover object-center"
     autoplay
     muted
     loop
     src="/geologia.webm"></video>
+ -->
+
+  <video
+    slot="background"
+    class="h-full w-full object-cover object-center"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="/geologia.mp4" type="video/mp4" />
+    <source src="/geologia.webm" type="video/webm" />
+  </video>
 </Section>

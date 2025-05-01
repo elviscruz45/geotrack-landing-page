@@ -8,47 +8,70 @@
   <div class="container mx-auto flex items-center justify-between px-4 py-3">
     <div class="flex items-center">
       <!-- If using static assets: -->
-      <img
-        src="/logo.svg"
-        alt="Company Logo"
-        width="40"
-        height="40"
-        class="mr-2"
-      />
+      <div class="w-100 h-16 overflow-hidden">
+        <img
+          src="/logogeotrack.png"
+          alt="Company Logo"
+          width="140"
+          height="140"
+          class="mr-2"
+        />
+      </div>
+      <!-- <img
+      src="/logo.svg"
+      alt="Company Logo"
+      width="40"
+      height="40"
+      class="mr-2"
+    /> -->
       <!-- If using imported assets:
       <Image src={logoImage || "/placeholder.svg"} alt="Company Logo" width={40} height={40} class="mr-2" />
       -->
-      <span class="text-xl font-bold text-white">YOURCOMPANY</span>
+      <!-- <span class="text-xl font-bold text-white">GEOTRACK AI</span> -->
     </div>
 
     <nav class="hidden items-center space-x-6 md:flex">
-      <a href="/" class="text-white transition hover:text-teal-400">Home</a>
-      <span class="text-gray-500">|</span>
-      <a href="/products" class="text-white transition hover:text-teal-400"
-        >Products</a
+      <!-- <a href="/" class="text-white transition hover:text-teal-400">Home</a>
+      <span class="text-gray-500">|</span> -->
+      <a href="/" class="text-white transition hover:text-teal-400"
+        >Caracteristicas</a
       >
       <span class="text-gray-500">|</span>
-      <a href="/services" class="text-white transition hover:text-teal-400"
-        >Services</a
+      <a href="/" class="text-white transition hover:text-teal-400">Servicios</a
       >
+      <!-- <span class="text-gray-500">|</span>
+      <a href="/" class="text-white transition hover:text-teal-400"
+        >Experiencia</a
+      > -->
       <span class="text-gray-500">|</span>
-      <a href="/experience" class="text-white transition hover:text-teal-400"
-        >Experience</a
+      <a href="/" class="text-white transition hover:text-teal-400"
+        >Sobre Nosotros</a
       >
+      <!-- <a href="/about" class="text-white transition hover:text-teal-400"
+        >Sobre Nosotros</a
+      > -->
       <span class="text-gray-500">|</span>
-      <a href="/about" class="text-white transition hover:text-teal-400"
-        >About Us</a
-      >
-      <span class="text-gray-500">|</span>
-      <a href="/contact" class="text-white transition hover:text-teal-400"
-        >Contact</a
+      <a href="/" class="text-white transition hover:text-teal-400"
+        >Contactanos</a
       >
     </nav>
 
     <div class="flex items-center space-x-2">
-      <a href="/en" class="w-6"><img src="/flags/en.png" alt="English" /></a>
-      <a href="/fr" class="w-6"><img src="/flags/fr.png" alt="French" /></a>
-      <a href="/es" class="w-6"><img src="/flags/es.png" alt="Spanish" /></a>
+      <a href="/en" class="inline-flex h-7 w-7">
+        <img
+          src="/flags/usa.png"
+          alt="English"
+          class="h-full w-full rounded-full object-cover"
+        />
+      </a>
+      <!-- <a href="/fr" class="w-6"><img src="/flags/fr.png" alt="French" /></a> -->
+      <a href="/en" class="inline-flex h-7 w-7">
+        <img
+          src="/flags/espana.png"
+          alt="Spanish"
+          class="h-full w-full rounded-full object-cover"
+        />
+      </a>
       <button class="text-white md:hidden" id="menu-toggle">
         <i class="fa-solid fa-bars"></i>
       </button>

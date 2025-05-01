@@ -1,0 +1,101 @@
+---
+// src/components/Technology.astro
+---
+
+<section class="bg-gray-900 py-20">
+  <div class="container mx-auto px-4">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+        Our Technology
+      </h2>
+      <p class="mx-auto max-w-3xl text-gray-300">
+        State-of-the-art AI technologies powering our mining industry solutions.
+      </p>
+    </div>
+
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <div class="mb-8">
+          <h3 class="mb-4 text-2xl font-bold text-white">
+            Advanced Machine Learning
+          </h3>
+          <p class="text-gray-300">
+            Our proprietary machine learning algorithms analyze vast amounts of
+            data from mining operations to identify patterns and make
+            predictions with unprecedented accuracy.
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="mb-4 text-2xl font-bold text-white">
+            Computer Vision Systems
+          </h3>
+          <p class="text-gray-300">
+            AI-powered visual recognition technology that monitors mining
+            operations in real-time, detecting anomalies and potential safety
+            hazards.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-2xl font-bold text-white">
+            Digital Twin Technology
+          </h3>
+          <p class="text-gray-300">
+            Create virtual replicas of mining operations to simulate scenarios
+            and optimize processes before implementation in the real world.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div
+          class="tech-visualization relative overflow-hidden rounded-lg bg-gray-800 p-8"
+        >
+          <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 grid grid-cols-12 grid-rows-12">
+              {
+                Array(144)
+                  .fill(0)
+                  .map(() => <div class="border border-teal-400/10" />)
+              }
+            </div>
+          </div>
+
+          <div class="relative z-10">
+            <div class="mb-8 flex items-center justify-center">
+              <div
+                class="flex h-24 w-24 items-center justify-center rounded-full bg-teal-400/20"
+              >
+                <i class="fa-solid fa-microchip text-3xl text-teal-400"></i>
+              </div>
+            </div>
+
+            <div class="mb-8 grid grid-cols-3 gap-4">
+              <div class="rounded-lg bg-black/30 p-4 text-center">
+                <div class="text-sm text-teal-400">Accuracy</div>
+                <div class="text-xl font-bold text-white">98.7%</div>
+              </div>
+              <div class="rounded-lg bg-black/30 p-4 text-center">
+                <div class="text-sm text-teal-400">Processing</div>
+                <div class="text-xl font-bold text-white">Real-time</div>
+              </div>
+              <div class="rounded-lg bg-black/30 p-4 text-center">
+                <div class="text-sm text-teal-400">Integration</div>
+                <div class="text-xl font-bold text-white">100%</div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a
+                href="/technology"
+                class="inline-block rounded-full bg-teal-400 px-6 py-2 font-medium text-black transition hover:bg-teal-500"
+                >Learn more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

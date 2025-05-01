@@ -1,25 +1,41 @@
 ---
-import Features from '../components/Features.astro';
-import Hero from '../components/Hero.astro';
-import Newsletter from '../components/Newsletter';
-import Productive from '../components/Productive.astro';
-import Testimonial from '../components/Testimonial.astro';
-import MainLayout from '../layout/MainLayout.astro';
+import Features from "../components/Features.astro";
+import Hero from "../components/Hero.astro";
+import Newsletter from "../components/Newsletter";
+import Productive from "../components/Productive.astro";
+import VideoHero from "../components/VideoHero.astro";
+
+import Projects from "../components/Projects.astro";
+import Technology from "../components/Technology.astro";
+import Contact from "../components/Contact.astro";
+
+import Testimonial from "../components/Testimonial.astro";
+import MainLayout from "../layout/MainLayout.astro";
+import MiningHero from "../components/MiningHero.astro";
+import Solutions from "../components/Solutions.astro";
 ---
 
 <MainLayout>
-  <!-- Hero section -->
-  <Hero />
+  <VideoHero />
 
-  <!-- Features section -->
-  <Features />
+  <MiningHero />
 
-  <!-- Productive section -->
-  <Productive />
-
-  <!-- Testimonial section -->
-  <Testimonial />
-
-  <!-- Newsletter section -->
-  <Newsletter client:visible />
+  <Solutions />
+  <Projects />
+  <Technology />
+  <Contact />
 </MainLayout>
+
+<!-- Hero section -->
+<!-- <Hero /> -->
+<!-- Features section -->
+<!-- <Features /> -->
+
+<!-- Productive section -->
+<!-- <Productive /> -->
+
+<!-- Testimonial section -->
+<!-- <Testimonial /> -->
+
+<!-- Newsletter section -->
+<!-- <Newsletter client:visible /> -->

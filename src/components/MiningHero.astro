@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+// If you're using static assets, you don't need to import them
+// If you want to use imported assets, uncomment the line below
+// import miningBg from '../assets/mining-bg.jpg';
+---
+
+<section class="mining-hero relative flex h-screen items-center">
+  <div class="absolute inset-0 z-0">
+    <!-- If using static assets: -->
+    <img
+      src="/mining-bg.jpg"
+      alt="Mining operation"
+      class="h-full w-full object-cover"
+    />
+    <!-- If using imported assets:
+    <Image 
+      src={miningBg || "/placeholder.svg"} 
+      alt="Mining operation" 
+      width={1920} 
+      height={1080} 
+      class="w-full h-full object-cover"
+    />
+    -->
+    <div class="absolute inset-0 bg-black/70"></div>
+  </div>
+
+  <div class="container relative z-10 mx-auto px-4">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <h1
+          class="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
+        >
+          ARTIFICIAL INTELLIGENCE IN THE<br />
+          <span class="text-white">MINING INDUSTRY</span>
+        </h1>
+        <a
+          href="/contact"
+          class="inline-block rounded-full bg-white px-8 py-3 font-medium text-black transition hover:bg-teal-400"
+        >
+          Schedule meeting
+        </a>
+      </div>
+
+      <div class="relative">
+        <div class="stats-container">
+          <div class="mb-12 text-center">
+            <h3 class="text-lg font-medium text-teal-400">Project</h3>
+            <div class="text-5xl font-bold text-white md:text-6xl">
+              80 000 T
+            </div>
+            <div class="text-xl text-white">85 drilled holes</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="element-circle">
+              <div
+                class="mx-auto flex h-24 w-24 items-center justify-center rounded-full border-2 border-white/30"
+              >
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-white">Cu</div>
+                  <div class="text-xl text-white">1.2%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="element-circle">
+              <div
+                class="mx-auto flex h-24 w-24 items-center justify-center rounded-full border-2 border-white/30"
+              >
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-white">Mo</div>
+                  <div class="text-xl text-white">2.6%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mining-visualization mt-8">
+          <div class="relative">
+            <div
+              class="h-64 w-full rounded-lg border-2 border-dashed border-white bg-teal-400/30"
+            >
+            </div>
+            <div class="absolute inset-0 grid grid-cols-8 grid-rows-6">
+              {
+                Array(48)
+                  .fill(0)
+                  .map(() => (
+                    <div class="flex items-center justify-center">
+                      <div class="h-2 w-2 rounded-full bg-white" />
+                    </div>
+                  ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a
+  href="/contact"
+  class="fixed bottom-6 right-6 z-20 rounded-full bg-green-500 p-3 text-white shadow-lg transition hover:bg-green-600"
+>
+  <i class="fa-solid fa-comment"></i>
+</a>
+
+<style>
+  .mining-visualization {
+    position: relative;
+    perspective: 800px;
+  }
+
+  .mining-visualization > div {
+    transform: rotateX(30deg) rotateZ(-10deg);
+    transform-style: preserve-3d;
+  }
+</style>

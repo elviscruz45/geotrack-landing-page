@@ -1,0 +1,280 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
+import {
+  Monitor,
+  BarChart3,
+  Settings,
+  AlertCircle,
+  Bot,
+  Database,
+  Map,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+
+const servicios = [
+  {
+    icon: Monitor,
+    title: "Monitoreo y Control en Tiempo Real",
+    description:
+      "Supervisión continua de perforaciones con datos actualizados al instante",
+    features: [
+      "Dashboard en tiempo real",
+      "Alertas automáticas",
+      "Control remoto de equipos",
+      "Métricas de rendimiento",
+    ],
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: BarChart3,
+    title: "Análisis Automatizado de Datos",
+    description: "Procesamiento inteligente de datos geológicos operativos",
+    features: [
+      "Análisis predictivo",
+      "Reportes automáticos",
+      "Tendencias y patrones",
+      "Insights accionables",
+    ],
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: Settings,
+    title: "Gestión Centralizada de Proyectos",
+    description:
+      "Control total de proyectos sin importar la ubicación geográfica",
+    features: [
+      "Panel unificado",
+      "Gestión multi-proyecto",
+      "Colaboración remota",
+      "Sincronización automática",
+    ],
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: AlertCircle,
+    title: "Alertas Simuladas Preventivas",
+    description: "Sistema avanzado para prevención de fallos y desviaciones",
+    features: [
+      "Detección temprana",
+      "Simulaciones predictivas",
+      "Notificaciones inteligentes",
+      "Planes de contingencia",
+    ],
+    color: "from-red-500 to-orange-500",
+  },
+  {
+    icon: Bot,
+    title: "Asistente Virtual Inteligente",
+    description: "Aliado estratégico en campo con IA conversacional",
+    features: [
+      "Consultas en lenguaje natural",
+      "Recomendaciones expertas",
+      "Soporte 24/7",
+      "Aprendizaje continuo",
+    ],
+    color: "from-indigo-500 to-blue-500",
+  },
+  {
+    icon: Database,
+    title: "Acceso Rápido a Sondajes",
+    description: "Acceso remoto instantáneo a todos los datos del proyecto",
+    features: [
+      "Base de datos centralizada",
+      "Búsqueda avanzada",
+      "Exportación flexible",
+      "Historial completo",
+    ],
+    color: "from-teal-500 to-cyan-500",
+  },
+  {
+    icon: Map,
+    title: "Visualización en Mapas Dinámicos",
+    description:
+      "Representación visual de actividades y avances en tiempo real",
+    features: [
+      "Mapas interactivos",
+      "Capas personalizables",
+      "Geolocalización precisa",
+      "Visualización 3D",
+    ],
+    color: "from-yellow-500 to-orange-500",
+  },
+];
+---
+
+<MainLayout
+  title="Servicios - GeoTrackAI"
+  description="Descubre la suite completa de herramientas de GeoTrackAI diseñadas para maximizar el valor de cada etapa en un proyecto geológico."
+>
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="container relative mx-auto px-4 py-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <Badge class="mb-6 border-blue-400/30 bg-blue-600/20 text-blue-100"
+            >Suite Completa de Servicios</Badge
+          >
+          <h1 class="mb-6 text-4xl font-bold leading-tight lg:text-5xl">
+            Servicios que{" "}
+            <span
+              class="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent"
+            >
+              Maximizan el Valor
+            </span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-3xl text-xl text-blue-100 lg:text-2xl">
+            GeoTrackAI ofrece una suite de herramientas diseñadas para maximizar
+            el valor de cada etapa en un proyecto geológico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Herramientas Especializadas
+          </h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            Cada servicio está diseñado para abordar desafíos específicos de la
+            industria minera
+          </p>
+        </div>
+
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
+          {
+            servicios.map((servicio) => (
+              <Card class="border-0 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="p-6">
+                  <div class="mb-4 flex items-start gap-4">
+                    <div
+                      class={`h-14 w-14 bg-gradient-to-r ${servicio.color} flex flex-shrink-0 items-center justify-center rounded-xl`}
+                    >
+                      <servicio.icon className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 class="mb-2 text-xl font-semibold text-gray-900">
+                        {servicio.title}
+                      </h3>
+                      <p class="text-gray-600">{servicio.description}</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    {servicio.features.map((feature) => (
+                      <div class="flex items-center gap-3">
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span class="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto mb-16 max-w-4xl text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Proceso de Implementación
+          </h2>
+          <p class="text-xl text-gray-600">
+            Implementación rápida y sin complicaciones
+          </p>
+        </div>
+
+        <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-4">
+          <div class="text-center">
+            <div
+              class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+            >
+              <span class="text-xl font-bold text-white">1</span>
+            </div>
+            <h3 class="mb-2 font-semibold">Análisis</h3>
+            <p class="text-sm text-gray-600">
+              Evaluamos tus necesidades específicas
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-emerald-500"
+            >
+              <span class="text-xl font-bold text-white">2</span>
+            </div>
+            <h3 class="mb-2 font-semibold">Configuración</h3>
+            <p class="text-sm text-gray-600">Personalizamos la plataforma</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
+            >
+              <span class="text-xl font-bold text-white">3</span>
+            </div>
+            <h3 class="mb-2 font-semibold">Capacitación</h3>
+            <p class="text-sm text-gray-600">Entrenamos a tu equipo</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-blue-500"
+            >
+              <span class="text-xl font-bold text-white">4</span>
+            </div>
+            <h3 class="mb-2 font-semibold">Soporte</h3>
+            <p class="text-sm text-gray-600">Acompañamiento continuo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="bg-gradient-to-r from-blue-900 to-indigo-900 py-20 text-white"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="mb-6 text-3xl font-bold lg:text-4xl">
+          ¿Listo para Optimizar tus Operaciones?
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+          Descubre cómo nuestros servicios pueden transformar tu proyecto
+          geológico
+        </p>
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <!-- <Button
+            size="lg"
+            class="bg-white px-8 py-3 text-blue-900 hover:bg-gray-100"
+          >
+            Solicitar Consulta Gratuita
+          </Button> -->
+          <Button
+            href="/sobre-nosotros"
+            size="lg"
+            variant="outline"
+            class="border-blue-300 bg-transparent px-8 py-3 text-blue-100 hover:bg-blue-800/50"
+          >
+            Conocer Nuestro Equipo
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</MainLayout>

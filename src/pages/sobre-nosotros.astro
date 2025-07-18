@@ -1,0 +1,334 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
+import {
+  Target,
+  Users,
+  Lightbulb,
+  Award,
+  Globe,
+  Zap,
+  ArrowRight,
+  CheckCircle,
+  Heart,
+  Shield,
+} from "lucide-react";
+
+const valores = [
+  {
+    icon: Lightbulb,
+    title: "Innovación",
+    description:
+      "Desarrollamos tecnología de vanguardia para resolver desafíos reales",
+    color: "from-yellow-500 to-orange-500",
+  },
+  {
+    icon: Users,
+    title: "Experiencia",
+    description:
+      "Equipo multidisciplinario con años de experiencia en geología y minería",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: Target,
+    title: "Enfoque Práctico",
+    description:
+      "Soluciones diseñadas por profesionales de campo para profesionales de campo",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: Heart,
+    title: "Compromiso",
+    description:
+      "Dedicados a impulsar el éxito de nuestros clientes y la industria",
+    color: "from-red-500 to-pink-500",
+  },
+];
+
+const beneficios = [
+  "Herramientas prácticas y fáciles de usar",
+  "Enfoque en resultados reales y medibles",
+  "Diseñado para profesionales de campo",
+  "Agilidad en la implementación",
+  "Precisión en los datos y análisis",
+  "Control total de las operaciones",
+];
+---
+
+<MainLayout
+  title="Sobre Nosotros - GeoTrackAI"
+  description="Conoce al equipo de GeoTrackAI, profesionales con experiencia en geología, minería y desarrollo tecnológico comprometidos con la minería inteligente 5.0."
+>
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="container relative mx-auto px-4 py-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <Badge class="mb-6 border-blue-400/30 bg-blue-600/20 text-blue-100"
+            >Nuestro Propósito</Badge
+          >
+          <h1 class="mb-6 text-4xl font-bold leading-tight lg:text-5xl">
+            Sobre{" "}
+            <span
+              class="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent"
+            >
+              GeoTrackAI
+            </span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-3xl text-xl text-blue-100 lg:text-2xl">
+            En GeoTrackAI, creemos que la tecnología debe ser una aliada, no una
+            complicación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+              Nuestra Misión
+            </h2>
+            <p class="text-xl leading-relaxed text-gray-600">
+              Somos un equipo de profesionales con experiencia en geología,
+              minería y desarrollo tecnológico, comprometidos con crear
+              soluciones que impulsen una nueva era: la{" "}
+              <span class="font-semibold text-blue-600"
+                >minería inteligente 5.0</span
+              >.
+            </p>
+          </div>
+
+          <div
+            class="mb-16 grid grid-cols-1 items-center gap-12 md:grid-cols-2"
+          >
+            <div>
+              <h3 class="mb-6 text-2xl font-bold text-gray-900">
+                Tecnología que Transforma
+              </h3>
+              <div class="space-y-4">
+                {
+                  beneficios.map((beneficio) => (
+                    <div class="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span class="text-gray-700">{beneficio}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+            <div
+              class="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-8"
+            >
+              <div class="text-center">
+                <div
+                  class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                >
+                  <Zap className="h-10 w-10 text-white" />
+                </div>
+                <h4 class="mb-4 text-xl font-semibold text-gray-900">
+                  Minería Inteligente 5.0
+                </h4>
+                <p class="text-gray-600">
+                  Impulsamos la evolución hacia operaciones más eficientes,
+                  seguras y conectadas en la industria minera.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Nuestros Valores
+          </h2>
+          <p class="mx-auto max-w-2xl text-xl text-gray-600">
+            Los principios que guían nuestro trabajo y definen nuestra cultura
+          </p>
+        </div>
+
+        <div
+          class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+        >
+          {
+            valores.map((valor) => (
+              <Card class="border-0 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="p-8 text-center">
+                  <div
+                    class={`h-16 w-16 bg-gradient-to-r ${valor.color} mx-auto mb-6 flex items-center justify-center rounded-full`}
+                  >
+                    <valor.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 class="mb-4 text-xl font-semibold text-gray-900">
+                    {valor.title}
+                  </h3>
+                  <p class="text-sm leading-relaxed text-gray-600">
+                    {valor.description}
+                  </p>
+                </div>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-8 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Nuestra Visión
+          </h2>
+          <div class="rounded-2xl bg-white p-8 shadow-lg lg:p-12">
+            <div
+              class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+            >
+              <Globe className="h-10 w-10 text-white" />
+            </div>
+            <p class="mb-8 text-xl leading-relaxed text-gray-700">
+              <span class="font-semibold text-blue-600"
+                >GeoTrackAI es tu primer aliado</span
+              > hacia una operación más eficiente, segura y conectada. Visualizamos
+              un futuro donde la tecnología y la experiencia humana trabajen en perfecta
+              armonía para revolucionar la industria minera.
+            </p>
+            <div class="grid grid-cols-1 gap-6 text-center md:grid-cols-3">
+              <div>
+                <div class="mb-2 text-3xl font-bold text-blue-600">
+                  Eficiencia
+                </div>
+                <p class="text-sm text-gray-600">Operaciones optimizadas</p>
+              </div>
+              <div>
+                <div class="mb-2 text-3xl font-bold text-green-600">
+                  Seguridad
+                </div>
+                <p class="text-sm text-gray-600">Entornos más seguros</p>
+              </div>
+              <div>
+                <div class="mb-2 text-3xl font-bold text-purple-600">
+                  Conexión
+                </div>
+                <p class="text-sm text-gray-600">Equipos integrados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-8 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Nuestro Equipo
+          </h2>
+          <p class="mb-12 text-xl text-gray-600">
+            Profesionales multidisciplinarios unidos por la pasión de
+            transformar la industria minera
+          </p>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div
+              class="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-8"
+            >
+              <div
+                class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+              >
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                Geólogos Expertos
+              </h3>
+              <p class="text-sm text-gray-600">
+                Profesionales con años de experiencia en campo
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-8"
+            >
+              <div
+                class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-emerald-500"
+              >
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                Ingenieros de Software
+              </h3>
+              <p class="text-sm text-gray-600">
+                Desarrolladores especializados en IA y minería
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 p-8"
+            >
+              <div
+                class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
+              >
+                <Shield className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                Especialistas en Minería
+              </h3>
+              <p class="text-sm text-gray-600">
+                Consultores con experiencia operacional
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="bg-gradient-to-r from-blue-900 to-indigo-900 py-20 text-white"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="mb-6 text-3xl font-bold lg:text-4xl">
+          Únete a la Revolución Minera
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+          Descubre cómo GeoTrackAI puede ser tu aliado estratégico hacia el
+          futuro
+        </p>
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <!-- <Button
+            size="lg"
+            class="bg-white px-8 py-3 text-blue-900 hover:bg-gray-100"
+          >
+            Contactar Nuestro Equipo
+          </Button> -->
+          <Button
+            href="/caracteristicas"
+            size="lg"
+            variant="outline"
+            class="border-blue-300 bg-transparent px-8 py-3 text-blue-100 hover:bg-blue-800/50"
+          >
+            Ver Nuestras Características
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</MainLayout>

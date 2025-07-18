@@ -1,0 +1,230 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
+import {
+  Brain,
+  DollarSign,
+  TrendingUp,
+  AlertTriangle,
+  Network,
+  Map,
+  Shield,
+  Clock,
+} from "lucide-react";
+
+const caracteristicas = [
+  {
+    icon: Brain,
+    title: "Inteligencia Artificial en Tiempo Real",
+    description:
+      "IA disponible 24/7 para análisis continuo y toma de decisiones automatizada",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: DollarSign,
+    title: "Optimización de Costos",
+    description:
+      "Hasta 25% de ahorro operacional mediante análisis predictivo y optimización de recursos",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: TrendingUp,
+    title: "Incremento de Eficiencia",
+    description:
+      "Mejora del 30% en operaciones a través de automatización inteligente",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Reducción de Errores",
+    description:
+      "40% menos errores operativos con sistemas de validación automática",
+    color: "from-red-500 to-orange-500",
+  },
+  {
+    icon: Network,
+    title: "Conexión Total",
+    description:
+      "Integración completa entre geología, perforación y supervisión en una sola plataforma",
+    color: "from-indigo-500 to-blue-500",
+  },
+  {
+    icon: Map,
+    title: "Visualización Dinámica",
+    description: "Mapas interactivos y ubicaciones operativas en tiempo real",
+    color: "from-teal-500 to-cyan-500",
+  },
+  {
+    icon: Shield,
+    title: "Plataforma Segura",
+    description:
+      "Infraestructura escalable y segura en la nube con máxima disponibilidad",
+    color: "from-gray-600 to-gray-800",
+  },
+  {
+    icon: Clock,
+    title: "Monitoreo 24/7",
+    description:
+      "Supervisión continua de todas las operaciones sin interrupciones",
+    color: "from-yellow-500 to-orange-500",
+  },
+];
+---
+
+<MainLayout
+  title="Características - GeoTrackAI"
+  description="Descubre las características avanzadas de GeoTrackAI que transforman la forma en que se ejecutan y gestionan campañas de perforación."
+>
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="container relative mx-auto px-4 py-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <Badge class="mb-6 border-blue-400/30 bg-blue-600/20 text-blue-100"
+            >Características Avanzadas</Badge
+          >
+          <h1 class="mb-6 text-4xl font-bold leading-tight lg:text-5xl">
+            Características que{" "}
+            <span
+              class="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent"
+            >
+              Transforman
+            </span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-3xl text-xl text-blue-100 lg:text-2xl">
+            GeoTrackAI es mucho más que un software: es una plataforma
+            inteligente diseñada por geólogos para geólogos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            Tecnología que Marca la Diferencia
+          </h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            Descubre cómo nuestras características transforman la forma en que
+            se ejecutan y gestionan campañas de perforación
+          </p>
+        </div>
+
+        <div
+          class="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {
+            caracteristicas.map((caracteristica) => (
+              <Card class="border-0 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="p-8">
+                  <div
+                    class={`h-16 w-16 bg-gradient-to-r ${caracteristica.color} mb-6 flex items-center justify-center rounded-full`}
+                  >
+                    <caracteristica.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 class="mb-4 text-xl font-semibold text-gray-900">
+                    {caracteristica.title}
+                  </h3>
+                  <p class="leading-relaxed text-gray-600">
+                    {caracteristica.description}
+                  </p>
+                </div>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+              Resultados Comprobados
+            </h2>
+            <p class="text-xl text-gray-600">
+              Nuestras características se traducen en beneficios reales y
+              medibles
+            </p>
+          </div>
+
+          <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div
+              class="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-8 text-center"
+            >
+              <div class="mb-2 text-5xl font-bold text-blue-600">25%</div>
+              <p class="font-medium text-gray-700">Ahorro Operacional</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Reducción significativa en costos de operación
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-8 text-center"
+            >
+              <div class="mb-2 text-5xl font-bold text-green-600">30%</div>
+              <p class="font-medium text-gray-700">Mayor Eficiencia</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Incremento en productividad operativa
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 p-8 text-center"
+            >
+              <div class="mb-2 text-5xl font-bold text-purple-600">40%</div>
+              <p class="font-medium text-gray-700">Menos Errores</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Reducción drástica de errores operativos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="bg-gradient-to-r from-blue-900 to-indigo-900 py-20 text-white"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="mb-6 text-3xl font-bold lg:text-4xl">
+          Experimenta el Poder de GeoTrackAI
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+          Descubre cómo nuestras características pueden transformar tus
+          operaciones
+        </p>
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <!-- <Button
+            size="lg"
+            class="bg-white px-8 py-3 text-blue-900 hover:bg-gray-100"
+          >
+            Solicitar Demo Gratuita
+          </Button> -->
+          <Button
+            href="/servicios"
+            size="lg"
+            variant="outline"
+            class="border-blue-300 bg-transparent px-8 py-3 text-blue-100 hover:bg-blue-800/50"
+          >
+            Ver Nuestros Servicios
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</MainLayout>
